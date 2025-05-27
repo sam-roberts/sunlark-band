@@ -1,1 +1,182 @@
 Hello world
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ECHO VALLEY</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            background: white;
+            color: #333;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow-x: hidden;
+        }
+
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+            width: 100%;
+        }
+
+        .logo {
+            font-size: 4rem;
+            font-weight: 300;
+            letter-spacing: 8px;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradient 3s ease infinite;
+            transition: transform 0.3s ease;
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        .links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .link {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: transparent;
+            border: 2px solid #333;
+            border-radius: 4px;
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+        }
+
+        .link:hover {
+            background: #333;
+            color: white;
+        }
+
+        .particles {
+            display: none;
+        }
+
+        .particle {
+            display: none;
+        }
+
+        @keyframes gradient {
+            0% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 0;
+            }
+
+            10% {
+                opacity: 1;
+            }
+
+            90% {
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 3rem;
+                letter-spacing: 4px;
+            }
+
+            .tagline {
+                font-size: 1rem;
+                letter-spacing: 1px;
+            }
+
+            .links {
+                gap: 1rem;
+            }
+
+            .link {
+                padding: 0.8rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="logo">ECHO VALLEY</h1>
+        <p class="tagline">INDIE ROCK • DREAM POP</p>
+
+        <div class="links">
+            <a href="https://instagram.com/echovalleyband" class="link" target="_blank">INSTAGRAM</a>
+            <a href="https://echovalley.bandcamp.com" class="link" target="_blank">BANDCAMP</a>
+            <a href="https://open.spotify.com/artist/echovalley" class="link" target="_blank">SPOTIFY</a>
+            <a href="mailto:hello@echovalley.com" class="link">CONTACT</a>
+        </div>
+    </div>
+
+    <script>
+        // Add subtle mouse interaction
+        document.addEventListener('mousemove', (e) => {
+            const logo = document.querySelector('.logo');
+            const rect = logo.getBoundingClientRect();
+            const x = e.clientX - rect.left - rect.width / 2;
+            const y = e.clientY - rect.top - rect.height / 2;
+
+            const distance = Math.sqrt(x * x + y * y);
+            if (distance < 200) {
+                const intensity = 1 - distance / 200;
+                logo.style.transform = `scale(${1 + intensity * 0.1}) translate(${x * intensity * 0.05}px, ${y * intensity * 0.05}px)`;
+            } else {
+                logo.style.transform = 'scale(1) translate(0, 0)';
+            }
+        });
+    </script>
+</body>
+
+</html>
