@@ -10,6 +10,9 @@ h3,
 h4 {
   padding-bottom: 1rem;
 }
+h3 {
+  font-size: 1.25rem;
+}
 hr {
   height: 1px;
   color: #050505;
@@ -57,7 +60,7 @@ body {
 }
 
 .tagline {
-  font-size: 1.2rem;
+  font-size: 1.25rem;
   color: #050505;
   font-weight: 300;
   letter-spacing: 2px;
@@ -97,7 +100,7 @@ body {
   letter-spacing: 1px;
   transition: all 0.3s ease;
   gap: 0.5rem;
-  align-items: baseline;
+  align-items: center;
 }
 
 .link:hover {
@@ -123,6 +126,7 @@ body {
   .tagline {
     font-size: 1rem;
     letter-spacing: 1px;
+    text-transform: uppercase;
   }
 
   .links {
