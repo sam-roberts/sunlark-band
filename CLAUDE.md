@@ -14,9 +14,15 @@ Static website for Sunlark, a Sydney-based alt-rock/grunge band. No build system
 - `images/` — Logo, favicon, cover art
 - `media/` — Audio files (rehearsal recordings)
 
+## Infrastructure
+
+- **Domain**: sunlarkband.com via Porkbun
+- **Hosting**: Netlify, auto-deploys from GitHub repo `sam-roberts/sunlark-band`
+- **Analytics**: Cloudflare Web Analytics (client-side script in `index.html`)
+
 ## Development
 
-No build step. Open HTML files directly in a browser or use any local server (e.g., `npx serve` or `python -m http.server`).
+No build step. Open HTML files directly in a browser or use any local server (e.g., `npx serve` or `python -m http.server`). Push to `main` to deploy.
 
 ## Design
 
