@@ -84,8 +84,8 @@ body {
   flex-wrap: wrap;
 }
 
-.section {
-  margin-top: var(--spacing-lg);
+.mono {
+  font-family: monospace;
 }
 
 .spacer {
