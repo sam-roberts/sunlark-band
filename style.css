@@ -4,15 +4,17 @@
   --color-text: #050505;
 
   /* Typography */
-  --font-sans: "Helvetica Neue", Arial, sans-serif;
-  --font-mono: monospace;
+  --font-sans:
+    "Helvetica Neue", Arial, sans-serif; /* kept as a fallback option, no longer used on body */
+  --font-mono: "Space Mono", ui-monospace, "Courier New", monospace;
   --font-size-sm: 1rem;
   --font-size-md: 1.25rem;
-  --font-weight-light: 300;
-  --font-weight-medium: 500;
+  /* Space Mono only ships 400 and 700, so light/medium map to regular */
+  --font-weight-light: 400;
+  --font-weight-medium: 400;
   --font-weight-bold: 700;
-  --letter-spacing-sm: 1px;
-  --letter-spacing-md: 2px;
+  --letter-spacing-sm: 0.02em;
+  --letter-spacing-md: 0.05em;
 
   /* Spacing (4px base scale) */
   --space-xs: 0.25rem; /* 4px */
@@ -38,7 +40,7 @@
 }
 
 body {
-  font-family: var(--font-sans);
+  font-family: var(--font-mono);
   background: var(--color-bg);
   color: var(--color-text);
   min-height: 100vh;
@@ -52,6 +54,8 @@ h2,
 h3,
 h4 {
   padding-bottom: var(--space-md);
+  letter-spacing: -0.02em;
+  line-height: 1.15;
 }
 
 h3 {
